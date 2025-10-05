@@ -36,11 +36,17 @@ body {
     max-width: 1200px;
     margin: 0 auto;
 }
-
 .logo {
-    height: 510px;
-    width: auto;
+    height: 120px; /* логог томруулах */
+    width: auto;   /* өргөнийг автоматаар тохируулах */
+    object-fit: contain;
+    transition: transform 0.3s ease;
 }
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
 
 .nav-menu {
     display: flex;
