@@ -84,7 +84,7 @@
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.product-card {
+.value-card {
 	display: grid;
 	grid-template-columns: 140px 1fr;
 	gap: 16px;
@@ -97,27 +97,27 @@
 	max-width: 720px;
 }
 
-.product-img {
+.value-img {
 	width: 100%;
 	height: auto;
 	border-radius: 10px;
 	object-fit: cover;
 }
 
-.product-info {
+.value-info {
 	display: flex;
 	flex-direction: column;
 	gap: 6px;
 }
 
-.product-name {
+.value-name {
 	margin: 0;
 	font-size: 1.125rem;
 	font-weight: 600;
 	color: #222;
 }
 
-.product-price {
+.value-price {
 	font-size: 1rem;
 	font-weight: 700;
 	color: #e0628c; /* matches the pink swoosh vibe */
