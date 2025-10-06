@@ -1,52 +1,44 @@
-*** Begin Patch
-*** Update File: c:\Users\-----------------pc\Downloads\script.js
-@@
--// Cart functionality (basic)
--document.querySelector('.cart-icon').addEventListener('click', function() {
--    alert('Cart is empty. Add some products to see them here!');
--});
-+// Cart icon opens cart if available
-+document.querySelector('.cart-icon').addEventListener('click', function() {
-+    if (typeof openCart === 'function') {
-+        openCart();
-+    } else {
-+        alert('Cart is empty. Add some products to see them here!');
-+    }
-+});
-@@
--document.querySelector('.profile-icon').addEventListener('click', function() {
--    alert('Please log in to access your profile');
--});
-+document.querySelector('.profile-icon').addEventListener('click', function() {
-+    window.location.href = 'signin.html';
-+});
-@@
--// Add CSS for ripple effect
--const style = document.createElement('style');
--style.textContent = `
-+// Add CSS for ripple effect
-+const style = document.createElement('style');
-+style.textContent = `
-@@
--document.head.appendChild(style);
--// Cart functionality
--document.querySelector('.cart-icon').addEventListener('click', function() {
--    if (typeof openCart === 'function') {
--        openCart();
--    } else {
--        alert('Cart is empty. Add some products to see them here!');
--    }
--});f'));
--        if (target) {
--            target.scrollIntoView({
--                behavior: 'smooth',
--                block: 'start'
--            });
--        }
--    });
--});
-+document.head.appendChild(style);
-*** End Patchbed!';
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    });
+});
+
+// Add to cart functionality
+document.querySelectorAll('.btn-product').forEach(button => {
+    button.addEventListener('click', function() {
+        const productName = this.closest('.product-card').querySelector('.product-name').textContent;
+        const productPrice = this.closest('.product-card').querySelector('.product-price').textContent;
+        
+        // Add visual feedback
+        this.style.backgroundColor = '#28a745';
+        this.textContent = 'Added!';
+        
+        // Show notification (simple alert for demo)
+        setTimeout(() => {
+            alert(`${productName} (${productPrice}) added to cart!`);
+            this.style.backgroundColor = '#000';
+            this.textContent = 'Add to Cart';
+        }, 1000);
+    });
+});
+
+// Newsletter subscription
+document.querySelector('.btn-newsletter').addEventListener('click', function() {
+    const email = document.querySelector('.email-input').value;
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (email && emailRegex.test(email)) {
+        this.style.backgroundColor = '#28a745';
+        this.textContent = 'Subscribed!';
         document.querySelector('.email-input').value = '';
         
         setTimeout(() => {
