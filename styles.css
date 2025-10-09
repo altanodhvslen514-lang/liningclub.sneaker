@@ -39,7 +39,7 @@ body {
     margin: 0 auto;
 }
 .logo {
-    height: 120px; /* логог томруулах */
+    height: 60px; /* логог томруулах */
     width: auto;   /* өргөнийг автоматаар тохируулах */
     object-fit: contain;
     transition: transform 0.3s ease;
